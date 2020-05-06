@@ -10,8 +10,22 @@ describe("Utils Tests", () => {
     expect(errorMessage).toEqual(expectedErrorMessage);
   });
 
-  it("should return error message when email is invalid", () => {
-    const email = 'abc'
+  it("should return error message when email doesn't contain '@' character", () => {
+    const email = 'abc.com'
+    const errorMessage = validateEmail(email);
+    const expectedErrorMessage = 'Should be a valid email';
+    expect(errorMessage).toEqual(expectedErrorMessage);
+  });
+
+  it("should return error message when email doesn't contain atleast one '.' character", () => {
+    const email = 'abc@com'
+    const errorMessage = validateEmail(email);
+    const expectedErrorMessage = 'Should be a valid email';
+    expect(errorMessage).toEqual(expectedErrorMessage);
+  });
+
+  it("should return error message when email doesn't contain any characters after '.' character", () => {
+    const email = 'abc@com.'
     const errorMessage = validateEmail(email);
     const expectedErrorMessage = 'Should be a valid email';
     expect(errorMessage).toEqual(expectedErrorMessage);
@@ -24,7 +38,7 @@ describe("Utils Tests", () => {
     expect(errorMessage).toEqual(expectedErrorMessage);
   });
 
-  it("should return no error message when email is following the validations", () => {
+  it("should return no error message when email is following the right validations", () => {
     const email = 'abc@xyz.com'
     const errorMessage = validateEmail(email);
     const expectedErrorMessage = '';
@@ -52,7 +66,7 @@ describe("Utils Tests", () => {
     expect(errorMessage).toEqual(expectedErrorMessage);
   });
 
-  it("should return no error message when password is following the validations", () => {
+  it("should return no error message when password is following the right validations", () => {
     const password = 'abcdEfgh'
     const errorMessage = validatePassword(password);
     const expectedErrorMessage = '';
