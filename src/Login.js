@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {validateEmail, validatePassword} from './Utils';
 import "./index.css";
 
 const Login = () => {
@@ -27,34 +28,18 @@ const Login = () => {
   }
 
   const validateFormData = () => {
-    const emailValidationRegex = /\S+@\S+\.\S+/;
-    const passwordValidationRegex = /^(?=.*[A-Z]).*$/
     let isFormValid = true;
     let passwordError = '', emailError = '';
 
-    if (email === '') {
-      emailError = 'This is a required field'
-      isFormValid = false;
-    }
-    else if (!emailValidationRegex.test(email)) {
-      emailError = 'Should be a valid email'
-      isFormValid = false;
-    }
-    else if (email.length <= 5) {
-      emailError = 'Length of email should be more than 5 characters'
+    /*Validating email */
+    emailError = validateEmail(email);
+    if(emailError !== ''){
       isFormValid = false;
     }
 
-    if (password === '') {
-      passwordError = 'This is a required field'
-      isFormValid = false;
-    }
-    else if (password.length <= 6) {
-      passwordError = 'Min 6 characters'
-      isFormValid = false;
-    }
-    else if (!passwordValidationRegex.test(password)) {
-      passwordError = 'Should contain 1 uppercase letter'
+    /*Validating password */
+    passwordError = validatePassword(password);
+    if(passwordError !== ''){
       isFormValid = false;
     }
 
