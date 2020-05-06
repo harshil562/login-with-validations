@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {validateEmail, validatePassword} from './Utils';
+import { validateEmail, validatePassword } from './Utils';
 import "./index.css";
 
 const Login = () => {

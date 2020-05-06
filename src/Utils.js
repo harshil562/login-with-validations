@@ -1,7 +1,6 @@
 export const validateEmail = (email) => {
   const emailValidationRegex = /\S+@\S+\.\S+/;
   let emailError = ''
-
   if (email === '') {
     emailError = 'This is a required field'
   }
