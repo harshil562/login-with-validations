@@ -7,10 +7,10 @@ const Login = () => {
   const [errors, setError] = useState({ emailError: '', passwordError: '' });
   const [isLoading, setIsLoading] = useState(false);
 
-  const updateFormData = event =>
+  const updateFormData = (e) =>
     setFormData({
       ...formData,
-      [event.target.name]: event.target.value
+      [e.target.name]: e.target.value
     });
 
 
