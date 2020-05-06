@@ -8,7 +8,7 @@ export const validateEmail = (email) => {
     emailError = 'Should be a valid email'
   }
   else if (email.length <= 5) {
-    emailError = 'Length of email should be more than 5 characters'
+    emailError = 'Should me more than 5 characters long'
   }
   return emailError;
 }

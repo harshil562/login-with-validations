@@ -20,10 +20,10 @@ const Login = () => {
     if (isValid) {
       setIsLoading(true);
       fetch('https://www.mocky.io/v2/5d9d9219310000153650e30b')
-      .then(response => { 
-        response.json();
-        setIsLoading(false);
-      });
+        .then(response => {
+          response.json();
+          setIsLoading(false);
+        });
     }
   }
 
@@ -33,13 +33,13 @@ const Login = () => {
 
     /*Validating email */
     emailError = validateEmail(email);
-    if(emailError !== ''){
+    if (emailError !== '') {
       isFormValid = false;
     }
 
     /*Validating password */
     passwordError = validatePassword(password);
-    if(passwordError !== ''){
+    if (passwordError !== '') {
       isFormValid = false;
     }
 
