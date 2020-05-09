@@ -16,7 +16,6 @@
 
 input {
   display: block;
-  min-width: 90%;
   margin: 1em;
   padding: 1em;
   width: 20em;
@@ -34,7 +33,7 @@ button {
   padding: 1em;
   border: 1px solid #e4e6e8;
   border-radius: 4px;
-  min-width: 100%;
+  min-width: 92%;
   cursor: pointer;
   transition: 0.1s ease-in;
 }
